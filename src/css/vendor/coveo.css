@@ -56,6 +56,7 @@
 
     & .magic-box-input {
       background: none;
+      margin-left: 28px;
 
       & > input {
         font-family: var(--sans-serif);
@@ -73,8 +74,10 @@
     align-items: center;
     border: 0;
     display: flex;
-    float: left;
     justify-content: center;
+    left: 21px;
+    position: absolute;
+    top: 20px;
     width: var(--xl);
 
     & .coveo-search-button {
@@ -118,7 +121,6 @@
     opacity: 0;
     transform: translateX(12px);
     transition: opacity var(--transition-speed-sm) var(--transition-timing), transform var(--transition-speed-sm) var(--transition-timing);
-    width: 48px;
 
     &:hover,
     &:focus {
@@ -145,11 +147,17 @@
 }
 
 /* magic box suggestions */
-.magic-box.magic-box .magic-box-suggestions {
+.magic-box.magic-box-hasFocus .magic-box-suggestions.magic-box-hasSuggestion {
   border: 1px solid var(--aluminum-3);
   border-radius: 4px;
   box-shadow: 0 2px 9px rgba(0,0,0,.1);
   margin-top: var(--sm);
+}
+
+.magic-box.magic-box.magic-box-hasFocus .magic-box-suggestions.magic-box-hasSuggestion .coveo-magicbox-suggestions {
+  border: 0;
+  border-radius: 4px;
+  overflow: hidden;
 
   & .magic-box-suggestion {
     border-top: 0;
